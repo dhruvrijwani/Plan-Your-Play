@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@400&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+    
+      .lexend-tera {
+        font-family: 'Lexend Tera', sans-serif;
+        font-weight: 400;
+      }
+    </style>
+    <style>
+
+      .inter-font {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="mx-40">
+    <header class="text-gray-600 body-font border border-gray-300 shadow-md">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="home.html">
+            <span class="ml-3 text-4xl cursor-pointer lexend-tera">PLAN YOUR PLAY</span>
+          </a>
+        
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <div class="relative inline-block">
+              <a id="aboutButton" class="mr-5 hover:text-gray-900 cursor-pointer text-xl inter">Vadodara</a>
+              <div id="cityDropdown" class="hidden absolute z-10 mt-2 w-32 bg-white border border-gray-300 rounded shadow-lg">
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Vadodara</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Mumbai</a>
+                <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-200">Surat</a>
+              </div>
+            </div>
+            
+            <a id="aboutButton" class="mr-5 hover:text-gray-900 cursor-pointer text-xl inter">About</a>
+            <a id="contactButton" class="mr-5 hover:text-gray-900 cursor-pointer text-xl inter">Contact</a>
+            <a id="loginButton" class="mr-5 hover:text-gray-900 cursor-pointer text-xl inter" href="signup.html">Log In</a>
+          </nav>
+          <button class="inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-red-200 rounded text-base text-xl mt-4 md:mt-0" onclick="window.location.href = 'profile.html';">
+            PROFILE
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        
+        </div>
+
+
+        <script>
+          const aboutButton = document.getElementById("aboutButton");
+          const cityDropdown = document.getElementById("cityDropdown");
+        
+          aboutButton.addEventListener("click", () => {
+            cityDropdown.classList.toggle("hidden");
+          });
+        
+          window.addEventListener("click", (event) => {
+            if (!aboutButton.contains(event.target) && !cityDropdown.contains(event.target)) {
+              cityDropdown.classList.add("hidden");
+            }
+          });
+        </script>
+        
+      </header>
+      
+</body>
+</html>
